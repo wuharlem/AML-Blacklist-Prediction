@@ -1,2 +1,5 @@
+
+*.pkl
+*.pth
 *.csv
 *.txt
