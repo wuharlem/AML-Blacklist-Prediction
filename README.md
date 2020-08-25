@@ -1,6 +1,6 @@
 # AML-Blacklist-Prediction
 
-- [Link](https://tbrain.trendmicro.com.tw/Competitions/Details/11)
+- [連結](https://tbrain.trendmicro.com.tw/Competitions/Details/11)
 
 - 比賽說明：
 此競賽將提供參賽者公開新聞資料連結與相對應的焦點人物名單，  
@@ -15,7 +15,7 @@
 以下是我們的架構，分為前處理的爬蟲系統及模型。
 
 ### Crawling System
-
+  
 
 ### Model
 在這次比賽中我們用兩種方式，來做訓練以及測試：
