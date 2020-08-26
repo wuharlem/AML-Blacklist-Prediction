@@ -18,6 +18,51 @@
 Step1: 訓練一個能在文章中找出**名字**的**NER模型（BertForTokenClassification）**。  
 Step2: 利用NER任務模型當作基底，利用黑名單文章對AML文章偵測模型做fine-tune。
 
+step1-1: ``python model_1/NER_preprocess.py``  
+step1-2: ``python model_1/NER_train.py``
+```
+usage: NER_train.py [-h] [--save_paths SAVE_PATHS] [--dataset DATASET] [--batch_size BATCH_SIZE] [--max_epoch MAX_EPOCH]
+                    [--learning_rate LEARNING_RATE]
+
+NER Model Training
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --save_paths SAVE_PATHS
+                        the path of saved parameter
+  --dataset DATASET     the path of dataset
+  --batch_size BATCH_SIZE
+                        batch size
+  --max_epoch MAX_EPOCH
+                        max number of epoch
+  --learning_rate LEARNING_RATE
+                        learning rate
+```
+
+step2-1: ``python model_1/blacklist_preprocess.py``  
+step2-2: ``python model_1/blacklist_train.py``  
+
+```
+usage: blacklist_train.py [-h] [--save_paths SAVE_PATHS] [--dataset DATASET] [--batch_size BATCH_SIZE] [--max_epoch MAX_EPOCH]
+                          [--learning_rate LEARNING_RATE] [--weights WEIGHTS]
+
+Blacklist Prediction Model 1 Training
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --save_paths SAVE_PATHS
+                        the path of saved parameter
+  --dataset DATASET     the path of dataset
+  --batch_size BATCH_SIZE
+                        batch size
+  --max_epoch MAX_EPOCH
+                        max number of epoch
+  --learning_rate LEARNING_RATE
+                        learning rate
+  --weights WEIGHTS     weights of the model
+
+```
+
 ##### 缺點
 - 模型在判斷文章是否為AML文章並找名字的同時，除了**洗錢相關詞彙**的資訊，因為缺乏黑名單資料的情況下，會學到**名字**的資訊。
 - 不同的文章分段，需要人工判斷是否有包含AML文章的資訊
