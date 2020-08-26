@@ -3,3 +3,5 @@
 *.pth
 *.csv
 *.txt
+__pycache__/
+.ipynb_checkpoints/
