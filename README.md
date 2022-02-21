@@ -22,8 +22,8 @@
 1. 訓練一個能在文章中找出**名字**的**NER模型（BertForTokenClassification）**。  
 2. 利用NER任務模型當作基底，利用黑名單文章對AML文章偵測模型做fine-tune。
 3. 程式碼：
--   ``python model_1/NER_preprocess.py``  
--   ``python model_1/NER_train.py``
+  -  ``python model_1/NER_preprocess.py``  
+  -  ``python model_1/NER_train.py``
 ```
 usage: NER_train.py [-h] [--save_paths SAVE_PATHS] [--dataset DATASET] [--batch_size BATCH_SIZE] [--max_epoch MAX_EPOCH]
                     [--learning_rate LEARNING_RATE]
@@ -68,8 +68,8 @@ optional arguments:
 ```
 
 4. 缺點
--   模型在判斷文章是否為AML文章並找名字的同時，除了**洗錢相關詞彙**的資訊，因為缺乏黑名單資料的情況下，會學到**名字**的資訊。
--   不同的文章分段，需要人工判斷是否有包含AML文章的資訊
+  -  模型在判斷文章是否為AML文章並找名字的同時，除了**洗錢相關詞彙**的資訊，因為缺乏黑名單資料的情況下，會學到**名字**的資訊。
+  -  不同的文章分段，需要人工判斷是否有包含AML文章的資訊
 ------
 
 #### 方法2：利用NER模型找出名字，並對其名字前後文做黑名單文章的預測
@@ -77,7 +77,7 @@ optional arguments:
 2. 將名字的前後文作為輸入文章，並將**名字統一換成李○賢**。  
 3. 將文章丟入**Bert模型**之中做訓練，利用``[CLS]``token判斷文章是否為AML文章的分類問題。
 4. 改善
--   此模型不會學習到名字的訊息，避免特定名字才會預測出黑名單的狀況
+  -  此模型不會學習到名字的訊息，避免特定名字才會預測出黑名單的狀況
 5. 缺點
--   訓練時間較長
--   不同的文章分段，需要人工判斷是否有包含AML文章的資訊
+  -  訓練時間較長
+  -  不同的文章分段，需要人工判斷是否有包含AML文章的資訊
