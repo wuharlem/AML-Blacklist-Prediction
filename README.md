@@ -22,8 +22,8 @@
 1. 訓練一個能在文章中找出**名字**的**NER模型（BertForTokenClassification）**。  
 2. 利用NER任務模型當作基底，利用黑名單文章對AML文章偵測模型做fine-tune。
 3. 程式碼：
-``python model_1/NER_preprocess.py``  
-``python model_1/NER_train.py``
+-   ``python model_1/NER_preprocess.py``  
+-   ``python model_1/NER_train.py``
 ```
 usage: NER_train.py [-h] [--save_paths SAVE_PATHS] [--dataset DATASET] [--batch_size BATCH_SIZE] [--max_epoch MAX_EPOCH]
                     [--learning_rate LEARNING_RATE]
@@ -79,5 +79,5 @@ optional arguments:
 4. 改善
 -   此模型不會學習到名字的訊息，避免特定名字才會預測出黑名單的狀況
 5. 缺點
-- 訓練時間較長
-- 不同的文章分段，需要人工判斷是否有包含AML文章的資訊
+-   訓練時間較長
+-   不同的文章分段，需要人工判斷是否有包含AML文章的資訊
