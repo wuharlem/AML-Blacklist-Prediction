@@ -22,8 +22,8 @@
 1. 訓練一個能在文章中找出**名字**的**NER模型（BertForTokenClassification）**。  
 2. 利用NER任務模型當作基底，利用黑名單文章對AML文章偵測模型做fine-tune。
 3. 程式碼：
-  -  ``python model_1/NER_preprocess.py``  
-  -  ``python model_1/NER_train.py``
+  -  ``python ner/NER_preprocess.py``  
+  -  ``python ner/NER_train.py``
 ```
 usage: NER_train.py [-h] [--save_paths SAVE_PATHS] [--dataset DATASET] [--batch_size BATCH_SIZE] [--max_epoch MAX_EPOCH]
                     [--learning_rate LEARNING_RATE]
@@ -43,8 +43,8 @@ optional arguments:
                         learning rate
 ```
 
-``python model_1/blacklist_preprocess.py``  
-``python model_1/blacklist_train.py``  
+``python blacklist/blacklist_preprocess.py``  
+``python blacklist/blacklist_train.py``  
 
 ```
 usage: blacklist_train.py [-h] [--save_paths SAVE_PATHS] [--dataset DATASET] [--batch_size BATCH_SIZE] [--max_epoch MAX_EPOCH]
